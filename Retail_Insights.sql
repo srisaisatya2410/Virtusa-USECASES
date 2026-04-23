@@ -13,9 +13,13 @@ select * from Categories;
 
 -- Products Table
 create table Products
-(product_id int primary key, product_name varchar(50),
-category_id int,expiry_date date,stock_count int,
-price decimal(10,2),foreign key(category_id) references Categories(category_id));
+(product_id int primary key, 
+product_name varchar(50),
+category_id int,
+expiry_date date,
+stock_count int,
+price decimal(10,2),
+foreign key(category_id) references Categories(category_id));
 insert into Products values
 (101,'Chips',1,curdate()+interval 5 day, 120, 20.00),
 (102,'Biscuits',1,curdate()+interval 15 day,80,25.00),
@@ -26,11 +30,17 @@ insert into Products values
 select * from Products;
 
 -- SalesTransactions Table
-create table SalesTransactions(transaction_id int primary key,product_id int,quantity int,
-transaction_date date,foreign key(product_id) references Products(product_id));
+create table SalesTransactions
+(transaction_id int primary key,
+product_id int,
+quantity int,
+transaction_date date,
+foreign key(product_id) references Products(product_id));
 insert into SalesTransactions values
-(1,101,10,curdate()-interval 5 day),(2,103,20,curdate()-interval 2 day),
-(3,106,15,curdate()-interval 10 day),(4,101,5,curdate()-interval 1 day),
+(1,101,10,curdate()-interval 5 day),
+(2,103,20,curdate()-interval 2 day),
+(3,106,15,curdate()-interval 10 day),
+(4,101,5,curdate()-interval 1 day),
 (5,105,7,curdate()-interval 20 day);
 select * from SalesTransactions;
 
