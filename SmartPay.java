@@ -42,6 +42,8 @@ public class SmartPay implements Billable{
             System.out.print("Current Reading: ");
             int current=sc.nextInt();
 
+            sc.nextLine();
+
             if(previous>current){
                 System.out.println("Invalid Input");
                 continue;
@@ -56,9 +58,9 @@ public class SmartPay implements Billable{
             System.out.println("Tax Amount: "+taxAmount);
             System.out.println("Final Amount: "+(totalAmount+taxAmount));
             System.out.println("=========================");
-            sc.close();
             
         
         }
+        sc.close();
     }
 }
