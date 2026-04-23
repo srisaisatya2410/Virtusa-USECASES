@@ -9,6 +9,7 @@ insert into Categories values
 (1,'Snacks'),
 (2,'Dairy'),
 (3,'Beverages');
+select * from Categories;
 
 -- Products Table
 create table Products
@@ -22,6 +23,7 @@ insert into Products values
 (104,'Curd',2,curdate()+interval 2 day,60,30.00),
 (105,'Juice',3,curdate()+interval 1 day, 70, 60.00),
 (106,'Sprite',3,curdate()+interval 60 day, 200, 40.00);
+select * from Products;
 
 -- SalesTransactions Table
 create table SalesTransactions(transaction_id int primary key,product_id int,quantity int,
@@ -30,6 +32,7 @@ insert into SalesTransactions values
 (1,101,10,curdate()-interval 5 day),(2,103,20,curdate()-interval 2 day),
 (3,106,15,curdate()-interval 10 day),(4,101,5,curdate()-interval 1 day),
 (5,105,7,curdate()-interval 20 day);
+select * from SalesTransactions;
 
 -- Expiring Soon Query
 select * from Products 
